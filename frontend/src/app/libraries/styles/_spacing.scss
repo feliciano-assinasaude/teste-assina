@@ -1,0 +1,64 @@
+$global-spacing-unit-tiny: 6px;
+$global-spacing-unit-small: 12px;
+$global-spacing-unit: 24px;
+$global-spacing-unit-medium: 24px;
+$global-spacing-unit-large: 36px;
+$global-spacing-unit-huge: 72px;
+
+@for $i from 0 through 16 {
+  .ma-#{$i} {
+    margin: $i * 6px;
+  }
+
+  .mx-#{$i} {
+    margin: 0 $i * 6px;
+  }
+
+  .my-#{$i} {
+    margin: $i * 6px 0;
+  }
+
+  .mt-#{$i} {
+    margin-top: $i * 6px;
+  }
+
+  .mr-#{$i} {
+    margin-right: $i * 6px;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $i * 6px;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i * 6px;
+  }
+
+  .pa-#{$i} {
+    padding: $i * 6px;
+  }
+
+  .px-#{$i} {
+    padding: 0 $i * 6px;
+  }
+
+  .py-#{$i} {
+    padding: $i * 6px 0;
+  }
+
+  .pt-#{$i} {
+    padding-top: $i * 6px;
+  }
+
+  .pr-#{$i} {
+    padding-right: $i * 6px;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $i * 6px;
+  }
+
+  .pl-#{$i} {
+    padding-left: $i * 6px;
+  }
+}

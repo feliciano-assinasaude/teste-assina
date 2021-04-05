@@ -1,0 +1,52 @@
+<div class="c-calendar">
+  <div class="c-calendar__header" [style.width]="showDays ? '100%' : '196px'">
+    <mat-icon
+      class="c-calendar__header-action u-icon-small"
+      [class.c-calendar__header-action--disabled]="backDisabled"
+      svgIcon="symbols:new-chevron-left"
+      (click)="prevMonth()"
+    ></mat-icon>
+    <span (click)="onSelectMonth()" class="c-calendar__header-title">
+      {{ selectedDate.format("MMMM") }}
+      de
+      {{ selectedDate.format("YYYY") }}
+    </span>
+    <mat-icon
+      class="c-calendar__header-action u-icon-small"
+      svgIcon="symbols:new-chevron-right"
+      (click)="nextMonth()"
+    ></mat-icon>
+  </div>
+  <div class="c-calendar__calendar" *ngIf="showDays">
+    <div *ngFor="let label of labels" class="c-calendar__weekday">
+      <strong>{{ label }}</strong>
+    </div>
+    <div
+      *ngFor="let day of days; let i = index"
+      class="c-calendar__day"
+      [style.cursor]="day ? 'pointer' : null"
+      (click)="onClickDay(day)"
+    >
+      <ng-container *ngIf="day">
+        <ng-container
+          *ngIf="day.month() !== selectedDate.month() && showDiffDays"
+        >
+          <span
+            class="c-calendar__day--diff"
+            [class.c-calendar__day--selected]="day.isSame(selectedDate, 'day')"
+          >
+            {{ day.format("DD") }}
+          </span>
+        </ng-container>
+
+        <ng-container *ngIf="day.month() === selectedDate.month()">
+          <span
+            [class.c-calendar__day--selected]="day.isSame(selectedDate, 'day')"
+          >
+            {{ day.format("DD") }}
+          </span>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

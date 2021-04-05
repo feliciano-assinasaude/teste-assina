@@ -1,0 +1,35 @@
+@import "/src/app/libraries/styles/index";
+
+.c-consultation-card {
+  padding: $global-spacing-unit-small $global-spacing-unit-medium;
+  background: #ffffff;
+  border-radius: $global-spacing-unit-tiny;
+  min-height: 200px;
+  box-shadow: $shadow-level-1;
+
+  &__title {
+    color: $color-brand-secondary-medium;
+  }
+
+  > p {
+    color: $color-neutral-darkest;
+  }
+
+  &__date {
+    font-weight: 700;
+  }
+
+  &--active {
+    background: $color-brand-secondary-medium;
+    min-height: 250px;
+
+    .c-consultation-card__title {
+      color: $color-neutral-lightest;
+    }
+
+    .c-consultation-card__subtitle,
+    .c-consultation-card__date {
+      color: $color-neutral-lightest;
+    }
+  }
+}

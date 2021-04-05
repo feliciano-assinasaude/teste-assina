@@ -1,0 +1,24 @@
+<as-timeline [items]="schedules" [groupBy]="groupBy">
+  <ng-template let-key="key" #timelineKey>
+    <div
+      class="c-vendor-timeline__timeline {{ key }}"
+      [class.c-vendor-timeline__timeline--active]="key | fromUnix | isToday"
+    >
+      <div class="c-vendor-timeline__timeline-day">
+        {{ key | fromUnix | dayjs: "DD" }}
+      </div>
+      <div class="c-vendor-timeline__timeline-month">
+        {{ key | fromUnix | dayjs: "MMM" }}
+      </div>
+    </div>
+
+    <ng-template let-item="item" let-index="index" #timelineValues>
+      <div class="c-vendor-timeline__value" (click)="onClickItem(item)">
+        <as-consultation-card
+          *ngIf="item"
+          [schedule]="item"
+        ></as-consultation-card>
+      </div>
+    </ng-template>
+  </ng-template>
+</as-timeline>

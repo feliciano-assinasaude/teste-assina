@@ -1,0 +1,51 @@
+@import "/src/app/libraries/styles/index";
+
+.c-calendar-time {
+  margin: 0 -24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__button {
+    background-color: #ffffff;
+    padding: 6px;
+    margin: 0 3px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__icon {
+    width: $global-spacing-unit-small;
+    height: $global-spacing-unit-small;
+    color: $color-neutral-darkest;
+
+    &--left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-item {
+      margin: 0 $global-spacing-unit-tiny;
+      padding: $global-spacing-unit-tiny - 3 $global-spacing-unit-small + 3;
+      border: 1px solid $color-brand-secondary-medium;
+      color: $color-brand-secondary-medium;
+      border-radius: $global-spacing-unit-small;
+      font-size: $font-size-xxxs;
+      cursor: pointer;
+
+      &--selected {
+        color: $color-neutral-lightest;
+        background-color: $color-brand-secondary-medium;
+      }
+    }
+  }
+}

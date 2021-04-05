@@ -1,0 +1,137 @@
+html {
+  font-family: unquote($global-body-font);
+
+  -moz-osx-font-smoothing: grayscale; /* [1] */
+  -webkit-font-smoothing: antialiased; /* [1] */
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 12px;
+  color: $color-neutral-darkest;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Simple default styles for headings 1 through 6. Anything more opinionated
+ * than simple font-size changes should likely be applied via classes (see:
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
+ */
+
+// $global-alpha to $global-zeta font-size variables
+// are defined in 'settings/settings.global'.
+
+h1,
+.alpha {
+  font-size: $font-size-md;
+}
+
+h2,
+.beta {
+  font-size: $font-size-sm;
+}
+
+h3,
+.gamma {
+  font-size: $font-size-xs;
+}
+
+h4,
+.delta {
+  font-size: $font-size-xxs;
+}
+
+h5,
+.epsilon {
+  font-size: $font-size-xxs;
+}
+
+.text--large,
+.text--medium,
+.text--normal,
+.text--small {
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+.text--large {
+  font-size: $font-size-sm;
+}
+
+.text--medium {
+  font-size: $font-size-xs;
+}
+
+p,
+.text--normal {
+  font-size: $font-size-xxs;
+}
+
+.text--small {
+  font-size: $font-size-xxxs;
+}
+
+@include mq($from: tablet-landscape) {
+  h1,
+  .alpha {
+    font-size: $font-size-xl;
+  }
+  h2,
+  .beta {
+    font-size: $font-size-lg;
+  }
+  h3,
+  .gamma {
+    font-size: $font-size-md;
+  }
+  h4,
+  .delta {
+    font-size: $font-size-sm;
+  }
+  h5,
+  .epsilon {
+    font-size: $font-size-xs;
+  }
+  .text--large {
+    font-size: $font-size-sm;
+  }
+  .text--medium {
+    font-size: $font-size-xs;
+  }
+  p,
+  .text--normal {
+    font-size: $font-size-xxs;
+  }
+  .text--small {
+    font-size: $font-size-xxxs;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: unquote($global-headings-font);
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  background: $color-brand-primary-medium;
+  border: none;
+  outline: none;
+  padding: $global-spacing-unit-medium;
+  color: $color-neutral-lightest;
+  border-radius: $global-spacing-unit-tiny;
+  font-size: $font-size-sm;
+  font-weight: 700;
+}

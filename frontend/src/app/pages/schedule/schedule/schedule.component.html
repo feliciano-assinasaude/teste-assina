@@ -1,0 +1,49 @@
+<div class="c-schedule" *ngIf="schedule; else noSchedule">
+  <div class="c-schedule__header">
+    <as-header title="Confirmação de agendamento"></as-header>
+  </div>
+
+  <div class="c-schedule__content">
+    <div class="c-schedule__rsvp">
+      <h2 class="c-schedule__rsvp-title">Tudo certo!</h2>
+      <p class="c-schedule__rsvp-text">
+        Entraremos em contato com um dia de antecedência para confirmar sua
+        presença.
+      </p>
+    </div>
+
+    <div class="c-schedule__schedule">
+      <h1 class="c-schedule__schedule-title">Resumo</h1>
+
+      <div class="c-schedule__schedule-items">
+        <div class="c-schedule__schedule-items-item">
+          <p class="c-schedule__schedule-items-item-label">Especialidade</p>
+          <p class="c-schedule__schedule-items-item-value">
+            {{ schedule.medico.especialidade }}
+          </p>
+        </div>
+        <div class="c-schedule__schedule-items-item">
+          <p class="c-schedule__schedule-items-item-label">Profissional</p>
+          <p class="c-schedule__schedule-items-item-value">
+            {{ schedule.medico.nome }}
+          </p>
+        </div>
+        <div class="c-schedule__schedule-items-item">
+          <p class="c-schedule__schedule-items-item-label">Horário</p>
+          <p class="c-schedule__schedule-items-item-value">
+            {{ schedule.data | dayjs: "HH:mm" }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <button class="mt-5" (click)="onBack()">Voltar à página inicial</button>
+  </div>
+</div>
+
+<ng-template #noSchedule>
+  <div class="c-schedule">
+    <h1 class="c-schedule__title">Agendamento não encontrado!</h1>
+    <p class="c-schedule__text" (click)="onBack()">Voltar</p>
+  </div>
+</ng-template>

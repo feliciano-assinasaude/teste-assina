@@ -1,0 +1,96 @@
+// Display
+.d-flex {
+  display: flex !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-inline {
+  display: inline-block !important;
+}
+.d-none {
+  display: none !important;
+}
+
+// Flex fills
+.flex-fill {
+  flex: 1 !important;
+}
+.flex-auto {
+  flex: 0 auto !important;
+}
+
+// Flex Flow
+.flex-row {
+  flex-direction: row !important;
+}
+.flex-col {
+  flex-direction: column !important;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+.flex-col-reverse {
+  flex-direction: column-reverse !important;
+}
+
+// Flex alignments
+.align-start {
+  align-items: flex-start !important;
+}
+.align-center {
+  align-items: center !important;
+}
+.align-stretch {
+  align-items: stretch !important;
+}
+.align-baseline {
+  align-items: baseline !important;
+}
+.align-end {
+  align-items: flex-end !important;
+}
+
+// Flex Justify
+.justify-stretch {
+  justify-content: stretch !important;
+}
+.justify-start {
+  justify-content: start !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-around {
+  justify-content: space-around !important;
+}
+.justify-center {
+  justify-content: center !important;
+}
+
+// Fill Dimensions
+.fill-w,
+.fill-a {
+  width: 100% !important;
+}
+.fill-h,
+.fill-a {
+  height: 100% !important;
+}
+
+// Fill Screen
+.fill-sw,
+.fill-sa {
+  width: 100vw !important;
+}
+.fill-sh,
+.fill-sa {
+  height: 100vh !important;
+}
+
+.flex-center {
+  @extend .d-flex, .align-center, .justify-center;
+}

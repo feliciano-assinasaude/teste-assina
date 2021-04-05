@@ -1,0 +1,23 @@
+@import "/src/app/libraries/styles/index";
+
+.c-consultations {
+  background: $color-background-medium;
+
+  &__schedules {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: $global-spacing-unit-large 0;
+    padding-bottom: $global-spacing-unit-large;
+
+    &-action {
+      width: 80%;
+      background: $color-brand-primary-medium;
+      border: none;
+      outline: none;
+      padding: $global-spacing-unit-medium;
+      color: $color-neutral-lightest;
+      border-radius: $global-spacing-unit-tiny;
+    }
+  }
+}

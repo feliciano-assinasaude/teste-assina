@@ -1,0 +1,16 @@
+<div class="c-consultations">
+  <div>
+    <as-header title="Consultas"></as-header>
+  </div>
+  <div class="px-3 c-consultations__schedules">
+    <as-consultation-timeline
+      *ngIf="schedules && schedules.length > 0"
+      [schedules]="schedules"
+      (clickItem)="onClickItem($event)"
+    ></as-consultation-timeline>
+
+    <button (click)="onClick()" class="c-consultations__schedules-action">
+      Continuar
+    </button>
+  </div>
+</div>

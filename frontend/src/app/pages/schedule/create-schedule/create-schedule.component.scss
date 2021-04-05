@@ -1,0 +1,30 @@
+@import "/src/app/libraries/styles/index";
+
+.c-create-schedule {
+  background: $color-background-medium;
+  min-height: 100vh;
+
+  &__form {
+    width: 100%;
+    padding: 0 $global-spacing-unit-medium;
+    margin-top: $global-spacing-unit-large;
+
+    &-field {
+      width: 100%;
+    }
+
+    &-calendar {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background: $color-neutral-lightest;
+      border-radius: 0 0 $global-spacing-unit-tiny $global-spacing-unit-tiny;
+      box-shadow: $shadow-level-1;
+
+      &-header {
+        width: 100%;
+        margin-bottom: $global-spacing-unit-medium;
+      }
+    }
+  }
+}

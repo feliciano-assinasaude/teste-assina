@@ -1,0 +1,12 @@
+<div class="c-consultation-card" [class.c-consultation-card--active]="active">
+  <h1 class="c-consultation-card__title mb-3">
+    Chamada de vídeo com {{ schedule.medico.nome }}
+  </h1>
+  <p class="c-consultation-card__subtitle">
+    {{ schedule.medico.especialidade }}
+  </p>
+
+  <p class="c-consultation-card__date">
+    Início as {{ schedule.data | dayjs: "HH:mm" }}
+  </p>
+</div>

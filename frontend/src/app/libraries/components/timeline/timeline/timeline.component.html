@@ -1,0 +1,29 @@
+<div class="c-timeline">
+  <div
+    class="c-timeline__keys"
+    *ngFor="let key of groupedKeys; let index = index"
+  >
+    <div class="c-timeline__key">
+      <ng-container
+        *ngTemplateOutlet="
+          timelineKey;
+          context: { key: key, items: groupedItems[key], index: index }
+        "
+      ></ng-container>
+    </div>
+
+    <div class="c-timeline__items">
+      <div
+        class="c-timeline__item"
+        *ngFor="let item of groupedItems[key]; let ind = index"
+      >
+        <ng-container
+          *ngTemplateOutlet="
+            timelineValues;
+            context: { item: item, index: ind, keyIndex: index }
+          "
+        ></ng-container>
+      </div>
+    </div>
+  </div>
+</div>

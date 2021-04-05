@@ -1,0 +1,18 @@
+@import "/src/app/libraries/styles/index";
+
+.c-header {
+  width: 100%;
+  padding: $global-spacing-unit-medium;
+
+  &--primary {
+    background: $color-brand-primary-medium;
+  }
+
+  &--secondary {
+    background: $color-brand-secondary-medium;
+  }
+
+  &__title {
+    color: $color-neutral-lightest;
+  }
+}

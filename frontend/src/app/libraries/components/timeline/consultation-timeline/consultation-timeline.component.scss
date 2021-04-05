@@ -1,0 +1,65 @@
+@import "/src/app/libraries/styles/index";
+
+.c-vendor-timeline {
+  &__day {
+    display: flex;
+    margin-bottom: $global-spacing-unit-tiny * 9;
+  }
+
+  &__timeline {
+    width: $global-spacing-unit-medium * 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--active {
+      .c-vendor-timeline__timeline-day {
+        color: $color-brand-secondary-medium;
+        font-weight: 700;
+      }
+
+      .c-vendor-timeline__timeline-month {
+        color: $color-brand-secondary-medium;
+        font-weight: 700;
+      }
+    }
+
+    &-day {
+      color: $color-neutral-dark;
+    }
+
+    &-month {
+      color: $color-neutral-medium;
+      margin-bottom: $global-spacing-unit-tiny;
+      //text-transform: uppercase;
+    }
+
+    &-divider {
+      width: 1px;
+      height: 100%;
+      background: $color-neutral-medium;
+      margin: auto;
+    }
+  }
+
+  &__value {
+    width: 100%;
+    margin-bottom: $global-spacing-unit-small;
+
+    @include mq($until: tablet-landscape) {
+      margin-bottom: $global-spacing-unit-medium;
+    }
+
+    &-first {
+      margin-top: 0;
+
+      @include mq($until: tablet-landscape) {
+        margin-top: $global-spacing-unit-tiny * 9;
+      }
+    }
+  }
+}
+
+.c-vendor-timeline__divider-custom {
+  margin-right: $global-spacing-unit-medium !important;
+}

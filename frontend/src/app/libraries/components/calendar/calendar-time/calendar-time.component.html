@@ -1,0 +1,21 @@
+<div class="c-calendar-time">
+  <button class="c-calendar-time__button" (click)="removeIndex()">
+    <mat-icon class="c-calendar-time__icon c-calendar-time__icon--left" svgIcon="symbols:chevron-right">
+    </mat-icon>
+  </button>
+
+  <div class="c-calendar-time__list">
+
+    <div *ngFor="let time of displayedTimes" 
+      class="c-calendar-time__list-item"
+      (click)="onSelectTime(time)"
+      [ngClass]="{'c-calendar-time__list-item--selected': selectedTime === time }">
+      {{ time | fromUnix | dateFormat:'HH:mm'}}
+    </div>
+  
+  </div>
+
+  <button class="c-calendar-time__button" (click)="addIndex()">
+    <mat-icon class="c-calendar-time__icon" svgIcon="symbols:chevron-right"></mat-icon>
+  </button>
+</div>

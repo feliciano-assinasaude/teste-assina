@@ -1,0 +1,74 @@
+<div class="c-create-schedule">
+  <div class="c-create-schedule__header">
+    <as-header title="Agendar consulta"></as-header>
+  </div>
+
+  <form class="c-create-schedule__form" [formGroup]="form">
+    <mat-form-field
+      class="c-create-schedule__form-field"
+      color="accent"
+      appearance="outline"
+    >
+      <mat-label>Especialidade</mat-label>
+      <mat-select
+        formControlName="specialty"
+        (selectionChange)="onSelectSpecialty($event.value)"
+      >
+        <mat-option
+          *ngFor="let specialty of specialties"
+          [value]="specialty.id"
+        >
+          {{ specialty.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field
+      class="c-create-schedule__form-field mt-1"
+      color="accent"
+      appearance="outline"
+      *ngIf="doctors && doctors.length > 0"
+    >
+      <mat-label>Profissional</mat-label>
+      <mat-select formControlName="doctor">
+        <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">
+          {{ doctor.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="c-create-schedule__form-calendar">
+      <div class="c-create-schedule__form-calendar-header">
+        <as-header
+          title="Selecione o dia e horário"
+          textAlign="center"
+          theme="secondary"
+          borderRadius="6px 6px 0 0"
+        ></as-header>
+      </div>
+      <as-calendar-date
+        [selectedDate]="calendarParams.selectedDate"
+        [showDays]="calendarParams.showDays"
+        [showDiffDays]="calendarParams.showDiffDays"
+        (selectDay)="onSelectDay($event)"
+      ></as-calendar-date>
+    </div>
+
+    <mat-form-field
+      class="c-create-schedule__form-field mt-5"
+      color="accent"
+      appearance="outline"
+    >
+      <mat-label>Horário</mat-label>
+
+      <input
+        matInput
+        formControlName="hour"
+        [asInputMask]="timeMask"
+        autocomplete="off"
+      />
+    </mat-form-field>
+
+    <button class="mb-4" (click)="onSchedule()">Agendar</button>
+  </form>
+</div>

@@ -1,0 +1,63 @@
+@import "/src/app/libraries/styles/index";
+
+.c-calendar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__calendar {
+    display: inline-grid;
+    grid-template-columns: repeat(7, minmax(2em, 1fr));
+    text-align: center;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $global-spacing-unit-medium;
+    padding: 0 $global-spacing-unit-medium;
+
+    &-title {
+      cursor: pointer;
+      color: $color-brand-primary-medium;
+      font-weight: 700;
+    }
+
+    &-action {
+      fill: $color-brand-primary-medium;
+      cursor: pointer;
+
+      &--disabled {
+        fill: $color-neutral-medium;
+      }
+    }
+  }
+
+  &__weekday {
+    padding: $global-spacing-unit-tiny $global-spacing-unit-small;
+    margin-bottom: $global-spacing-unit-medium;
+    font-size: $font-size-xxs;
+    color: $color-brand-secondary-medium;
+  }
+
+  &__day {
+    padding: 0 $global-spacing-unit-small;
+    min-height: $global-spacing-unit-tiny * 7;
+    color: $color-neutral-darkest;
+
+    &--selected {
+      font-weight: 700;
+      color: $color-brand-primary-medium;
+    }
+
+    &--diff {
+      color: $color-neutral-medium;
+    }
+
+    &-events {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
